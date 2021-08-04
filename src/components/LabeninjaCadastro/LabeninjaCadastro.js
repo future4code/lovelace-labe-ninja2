@@ -19,6 +19,7 @@ let FormaPagamento = [
 ]
 
 
+
 export default class LabeninjaCadastro extends Component {
 
     state = {

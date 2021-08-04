@@ -1,4 +1,15 @@
 import React from 'react'
+
+
+import {Carrinho} from './components/Carrinho'
+ 
+function App() {
+	return (
+       
+		<Carrinho/>
+	)
+}
+
 import LabeninjaPrincipal from './components/LabeninjaPrincipal/LabeninjaPrincipal'
 import LabeninjaContrato from './components/LabeninjaContratos/LabeninjaContrato'
 import LabeninjaCadastro from './components/LabeninjaCadastro/LabeninjaCadastro'
@@ -6,7 +17,10 @@ import axios from 'axios'
 import styled from 'styled-components'
 import Detalhes from './components/Detalhes'
 
+
+
 const MainContainer = styled.div`
+
 
 `
 export default class App extends React.Component {
@@ -14,6 +28,22 @@ export default class App extends React.Component {
 	state = {
 		pagina: "Cadastro",	
 		produto: {}
+
+
+
+
+
+export default class App extends React.Component {
+
+	state = {
+
+		pagina: "Principal",
+
+		produto: {},
+
+		carrinho: []
+
+
 	}
 
 
@@ -34,6 +64,17 @@ export default class App extends React.Component {
 		})
 
 	}
+
+=
+
+	adicionaNoCarrinho = (produto) => {
+		const produtosAtualizados = [...this.state.carrinho,
+			produto
+		]
+		this.setState({ carrinho: produtosAtualizados })
+	}
+
+
 
 	renderizaPagina = () => {
 		switch (this.state.pagina) {
@@ -70,7 +111,7 @@ export default class App extends React.Component {
 	}
 
 
-	
+
 
 	render() {
 		return (
@@ -78,8 +119,8 @@ export default class App extends React.Component {
 
 				{this.renderizaPagina()}
 
-				{/* <button type="text" onClick={() => this.detalhesProduto("175cb9cb-e680-4f9b-8fa8-a0addf65523f")}>Exibir detalhes</button>
-				<Detalhes produto={this.state.produto}></Detalhes> */}
+				<button type="text" onClick={() => this.detalhesProduto("175cb9cb-e680-4f9b-8fa8-a0addf65523f")}>Exibir detalhes</button>
+				<Detalhes adicionaNoCarrinho={this.adicionaNoCarrinho} produto={this.state.produto}></Detalhes>
 
 			</MainContainer>
 
