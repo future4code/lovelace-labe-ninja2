@@ -17,8 +17,10 @@ export default class App extends React.Component {
 	state = {
 
 		pagina: "Principal",
-		
-		produto: {}
+
+		produto: {},
+
+		carrinho: []
 
 	}
 
@@ -41,6 +43,14 @@ export default class App extends React.Component {
 
 		})
 
+	}
+
+
+	adicionaNoCarrinho = (produto) => {
+		const produtosAtualizados = [...this.state.carrinho,
+			produto
+		]
+		this.setState({ carrinho: produtosAtualizados })
 	}
 
 
@@ -80,7 +90,7 @@ export default class App extends React.Component {
 	}
 
 
-	
+
 
 	render() {
 		return (
@@ -88,8 +98,8 @@ export default class App extends React.Component {
 
 				{this.renderizaPagina()}
 
-				{/* <button type="text" onClick={() => this.detalhesProduto("175cb9cb-e680-4f9b-8fa8-a0addf65523f")}>Exibir detalhes</button>
-				<Detalhes produto={this.state.produto}></Detalhes> */}
+				<button type="text" onClick={() => this.detalhesProduto("175cb9cb-e680-4f9b-8fa8-a0addf65523f")}>Exibir detalhes</button>
+				<Detalhes adicionaNoCarrinho={this.adicionaNoCarrinho} produto={this.state.produto}></Detalhes>
 
 			</MainContainer>
 
