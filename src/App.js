@@ -1,4 +1,15 @@
 import React from 'react'
+
+
+import {Carrinho} from './components/Carrinho'
+ 
+function App() {
+	return (
+       
+		<Carrinho/>
+	)
+}
+
 import LabeninjaPrincipal from './components/LabeninjaPrincipal/LabeninjaPrincipal'
 import LabeninjaContrato from './components/LabeninjaContratos/LabeninjaContrato'
 import LabeninjaCadastro from './components/LabeninjaCadastro/LabeninjaCadastro'
@@ -10,7 +21,7 @@ import Detalhes from './components/Detalhes'
 
 const MainContainer = styled.div`
 
-`
+
 
 
 
