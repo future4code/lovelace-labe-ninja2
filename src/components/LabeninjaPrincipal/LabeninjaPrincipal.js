@@ -7,27 +7,9 @@ export default class LabeninjaPrincipal extends Component {
 
     render() {
         return (
-
         
-            <div>                           
-             <nav className="navbar navbar-expand-md navbar-dark bg-dark container">
-              <div className="container-fluid">
-                    <a className="navbar-brand" href="#">Labeninja</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                    </button>
-                  <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                  
-                    <span className="navbar-text ms-auto mb-2 mb-lg-0 me-4">
-                        (55) 11 9453-33234
-                    </span>
-
-                  </div>
-              </div>
-             </nav>
-
-
-            <div>
+            <div>  
+              <div>
                 <nav class="navbar navbar-expand-md navbar-dark bg-dark container">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="#">Labeninja</a>
@@ -71,7 +53,7 @@ export default class LabeninjaPrincipal extends Component {
 
 
             </div>
-
+         </div>
         )
     }
 }
