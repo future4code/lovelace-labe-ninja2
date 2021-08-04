@@ -6,6 +6,8 @@ import axios from 'axios'
 import styled from 'styled-components'
 import Detalhes from './components/Detalhes'
 
+
+
 const MainContainer = styled.div`
 
 `
