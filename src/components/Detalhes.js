@@ -30,7 +30,7 @@ export default class Detalhes extends React.Component {
                     <p></p>
                 </div>
 
-                <button type="text">Adicionar ao Carrinho</button>
+                <button onClick={() => this.props.adicionaNoCarrinho(this.props.produto)} type="text">Adicionar ao Carrinho</button>
                 <button type="text">Voltar para Lista</button>
             </Container>
         )
