@@ -9,26 +9,18 @@ import Detalhes from './components/Detalhes'
 const MainContainer = styled.div`
 
 `
-
-
-
 export default class App extends React.Component {
 
 	state = {
-
-		pagina: "Principal",
-		
+		pagina: "Cadastro",	
 		produto: {}
-
 	}
 
 
 
 	detalhesProduto = (id) => {
-
 		const url = "https://labeninjas.herokuapp.com/jobs/" + id
 		const authorization = "089c363c-2449-490e-9e13-234a13327ac2"
-
 		axios.get(url, {
 			headers: {
 				authorization
@@ -42,8 +34,6 @@ export default class App extends React.Component {
 		})
 
 	}
-
-
 
 	renderizaPagina = () => {
 		switch (this.state.pagina) {
