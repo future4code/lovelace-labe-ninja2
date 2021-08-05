@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-import React from 'react'
-=======
 import React, { Component } from 'react';
 import styled from 'styled-components'
 import iconCart from './img/bxs-cart-add.svg'
-
->>>>>>> 4d7dda50bffb98ef05e4722aea215f1194a28d1c
 import LabeninjaPrincipal from './components/LabeninjaPrincipal/LabeninjaPrincipal'
 import LabeninjaContrato from './components/LabeninjaContratos/LabeninjaContrato'
 import LabeninjaCadastro from './components/LabeninjaCadastro/LabeninjaCadastro'
