@@ -1,6 +1,4 @@
 import React from 'react'
-
-
 import LabeninjaPrincipal from './components/LabeninjaPrincipal/LabeninjaPrincipal'
 import LabeninjaContrato from './components/LabeninjaContratos/LabeninjaContrato'
 import LabeninjaCadastro from './components/LabeninjaCadastro/LabeninjaCadastro'
@@ -75,6 +73,9 @@ export default class App extends React.Component {
 		]
 		this.setState({ carrinho: produtosAtualizados })
 	}
+
+
+
 	render() {
 		return (
 			<div>
