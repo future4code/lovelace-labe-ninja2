@@ -58,11 +58,11 @@ export default class LabeninjaCadastro extends Component {
             paymentMethods: this.state.itemEscolhido,
             dueDate: this.state.inputDate
         }
-        console.log(body.title)
-        console.log(body.description)
-        console.log(body.price)
-        console.log(body.paymentMethods)
-        console.log(body.dueDate)
+        // console.log(body.title)
+        // console.log(body.description)
+        // console.log(body.price)
+        // console.log(body.paymentMethods)
+        // console.log(body.dueDate)
 
         Axios.post(url,body,headers)
              .then((res)=>{
