@@ -40,8 +40,6 @@ export const BoxProduto = styled.div`
  
 `
 
-
-
 const url = "https://labeninjas.herokuapp.com"
 
 const headers = {
