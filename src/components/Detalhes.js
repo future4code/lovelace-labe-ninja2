@@ -8,11 +8,10 @@ display: inline;
 
 export default class Detalhes extends React.Component {
 
-
-
     render() {
         return (
             <Container>
+                <button onClick={this.props.irParaCarrinho}>Carrinho</button>
                 <div>
                     <b>Título:</b> {this.props.produto.title}
                     <p></p>
@@ -31,7 +30,7 @@ export default class Detalhes extends React.Component {
                 </div>
 
                 <button onClick={() => this.props.adicionaNoCarrinho(this.props.produto)} type="text">Adicionar ao Carrinho</button>
-                <button type="text">Voltar para Lista</button>
+                <button onClick={this.props.irParaContrato} type="text">Voltar para Lista</button>
             </Container>
         )
     }

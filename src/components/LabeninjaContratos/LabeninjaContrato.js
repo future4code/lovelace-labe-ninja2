@@ -6,24 +6,24 @@ export default class LabeninjaContrato extends Component {
 
     state = {
         sort: 'DECRESCENTE'
-      }
+    }
 
     getFilteredAndOrderedList = () => {
         return this.props.products
-        .filter((product) => this.props.maxFilter ? product.valor < this.props.maxFilter : true)
-        .filter((product) => this.props.minFilter ? product.valor > this.props.minFilter : true)
-        .filter((product) => this.props.nameFilter ? product.nome.includes(this.props.nameFilter) : true)
-        .sort((a, b) => this.state.sort === 'CRESCENTE' ? a.valor - b.valor : b.valor - a.valor)
-      }
-    
-    onChangeSort = (event) => {
-        this.setState({sort: event.target.value})
-      } 
+            .filter((product) => this.props.maxFilter ? product.valor < this.props.maxFilter : true)
+            .filter((product) => this.props.minFilter ? product.valor > this.props.minFilter : true)
+            .filter((product) => this.props.nameFilter ? product.nome.includes(this.props.nameFilter) : true)
+            .sort((a, b) => this.state.sort === 'CRESCENTE' ? a.valor - b.valor : b.valor - a.valor)
+    }
 
-    render() {        
-        
+    onChangeSort = (event) => {
+        this.setState({ sort: event.target.value })
+    }
+
+    render() {
+
         return (
-           <div>
+            <div>
                 <nav className="navbar navbar-expand-md navbar-dark bg-dark container">
                     <div className="container-fluid">
                         <a className="navbar-brand"
@@ -50,18 +50,18 @@ export default class LabeninjaContrato extends Component {
                     </div>
                 </nav>
 
-            <Header>
-                        
-                <label>               
-                Ordenar por:
-                    <select value={this.state.sort} onChange={this.onChangeSort}>
-                        <option value={'CRESCENTE'}>Crescente</option>
-                        <option value={'DESCRESCENTE'}>Decrescente</option>
-                    </select>
-                </label>              
-            </Header>   
+                <Header>
 
-           </div>
+                    <label>
+                        Ordenar por:
+                        <select value={this.state.sort} onChange={this.onChangeSort}>
+                            <option value={'CRESCENTE'}>Crescente</option>
+                            <option value={'DESCRESCENTE'}>Decrescente</option>
+                        </select>
+                    </label>
+                </Header>
+
+            </div>
 
         )
     }
