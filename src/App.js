@@ -6,11 +6,10 @@ import LabeninjaContrato from './components/LabeninjaContratos/LabeninjaContrato
 import LabeninjaCadastro from './components/LabeninjaCadastro/LabeninjaCadastro'
 import axios from 'axios'
 import Carrinho from './components/Carrinho';
+import Filtro from './components/Filtro';
 import Detalhes from './components/Detalhes'
 
-const MainContainer = styled.div`
 
-`
 const Img = styled.img`
 cursor: pointer;
 `
@@ -58,6 +57,9 @@ export default class App extends React.Component {
 		minFilter: 0,
 		maxFilter: 0,
 		nameFilter: '',
+		valorMinimoFiltro: "",
+		valorMaximoFiltro: "",
+		nomeFiltro:""
 	}
 
 	irParaPrincipal = () => {
@@ -80,6 +82,21 @@ export default class App extends React.Component {
 		console.log("Estou dentro do metodo Carrinho")
 		this.setState({ pagina: "Carrinho" });
 	}
+
+
+
+	onChangeValorMinimoFiltro = (event) => {
+		this.setState({ valorMinimoFiltro: event.target.value })
+	}
+
+	onChangeValorMaximoFiltro = (event) => {
+		this.setState({ valorMaximoFiltro: event.target.value })
+	}
+
+	onChangeNomeFiltro = (event) => {
+		this.setState({ nomeFiltro: event.target.value })
+	  }
+	
 
 
 	renderizaPagina = () => {
@@ -156,9 +173,28 @@ export default class App extends React.Component {
 		alert('Produto adicionado no carrinho.')
 	}
 
-	render() {
 
-		const componentServico = this.state.servico.map((servico) => {
+	render() {
+		
+		const servicosFiltrados = this.state.servico
+		.filter(produto => {
+			if (!this.props.valorMinimoFiltro || (produto.price >= this.props.valorMinimoFiltro)) {
+				return true
+			} else { return false }
+		})
+		.filter(produto => {
+			if (!this.props.valorMaximoFiltro || (produto.price <= this.props.valorMaximoFiltro)) {
+				return true
+			} else { return false }
+		})
+		.filter(produto => {
+			if (!this.props.nomeFiltro || (produto.title.toLowerCase().includes(this.props.nomeFiltro.toLowerCase()))) {
+				return true
+			} else { return false }
+		})
+
+
+		const componentServico = servicosFiltrados.map((servico) => {
 			return <div key={servico.id} className="container d-flex justify-content-center align-items-center h-100 mb-5">
 				<div className="row">
 					<div className="col-md-12">
@@ -181,7 +217,11 @@ export default class App extends React.Component {
 				{this.renderizaPagina()}
 
 				<BoxPrincipal>
-
+					<Filtro
+						onChangeValorMinimoFiltro={this.onChangeValorMinimoFiltro}
+						onChangeValorMaximoFiltro={this.onChangeValorMaximoFiltro}
+						onChangeNomeFiltro={this.onChangeNomeFiltro}>
+					</Filtro>
 					<BoxProduto>
 
 						{componentServico}
