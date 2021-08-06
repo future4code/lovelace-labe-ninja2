@@ -86,10 +86,7 @@ export default class LabeninjaCadastro extends Component {
 
     }
 
-    render() {
-
-        
-  
+    render() {      
         return (
             <div>
                 <nav className="navbar navbar-expand-md navbar-dark bg-dark container">

@@ -21,9 +21,6 @@ export default class LabeninjaPrincipal extends Component {
                                 <span class="navbar-text ms-auto mb-2 mb-lg-0 me-4">
                                     (55) 11 9453-33234
                                 </span>
-
-                                <button onClick={this.props.irParaCarrinho}>Carrinho</button>
-
                             </div>
                         </div>
                     </nav>
@@ -41,7 +38,6 @@ export default class LabeninjaPrincipal extends Component {
                                     className="btn btn-outline-dark">
                                     Quero ser um Labeninja
                                 </button>
-
 
 
                                 <button type="button"
